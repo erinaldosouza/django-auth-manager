@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'users_app',
     'groups_app',
     'routes_app',
+    'groups_routes_app',
+    'users_groups_app',
 ]
 
 MIDDLEWARE = [
