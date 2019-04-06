@@ -5,9 +5,6 @@ from routes_app.api.serializer import RouteAppSerializer
 
 
 # Create your models here.
-from routes_app.models import RouteApp
-
-
 class GroupAppSerializer(serializers.ModelSerializer):
 
     route = RouteAppSerializer(many=True, read_only=True)
