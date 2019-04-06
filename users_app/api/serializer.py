@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 # Create your models here.
-from groups_app_serializer.models import GroupAppSerializer
+from groups_app.api.serializer import GroupAppSerializer
 from users_app.models import UserApp
 
 

@@ -4,7 +4,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 
 from users_app.models import UserApp
-from users_app_serializer.models import UserAppSerializer
+from users_app.api.serializer import UserAppSerializer
 
 
 class UserAppViewSet(viewsets.ModelViewSet):

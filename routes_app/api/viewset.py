@@ -4,7 +4,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 
 from routes_app.models import RouteApp
-from routes_app_serializer.models import RouteAppSerializer
+from routes_app.api.serializer import RouteAppSerializer
 
 
 class RouteAppViewSet(viewsets.ModelViewSet):

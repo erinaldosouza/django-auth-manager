@@ -4,7 +4,7 @@ from django.db import models
 from rest_framework import serializers
 
 from groups_app.models import GroupApp
-from routes_app_serializer.models import RouteAppSerializer
+from routes_app.api.serializer import RouteAppSerializer
 
 
 class GroupAppSerializer(serializers.ModelSerializer):

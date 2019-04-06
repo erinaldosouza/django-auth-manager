@@ -4,7 +4,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 
 from groups_app.models import GroupApp
-from groups_app_serializer.models import GroupAppSerializer
+from  groups_app.api.serializer import GroupAppSerializer
 
 
 class GroupAppViewSet(viewsets.ModelViewSet):
