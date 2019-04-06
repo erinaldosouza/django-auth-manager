@@ -13,6 +13,6 @@ class GroupAppSerializer(serializers.ModelSerializer):
     route = RouteAppSerializer(many=True, read_only=True)
 
     class Meta:
-        model = GroupAppgi 
+        model = GroupApp
         fields = ('name', 'description', 'fl_active', 'route')
 
