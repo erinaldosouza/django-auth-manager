@@ -17,15 +17,17 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
+from groups_app.models import GroupApp
+from routes_app.models import RouteApp
 from users_app.api.viewset import UserAppViewSet
 from groups_app.api.viewset import GroupAppViewSet
 from routes_app.api.viewset import RouteAppViewSet
-
+from users_app.models import UserApp
 
 router = routers.DefaultRouter()
-router.register(r'users', UserAppViewSet)
-router.register(r'groups', GroupAppViewSet)
-router.register(r'routes', RouteAppViewSet)
+router.register(r'users', UserAppViewSet, base_name=UserApp)
+router.register(r'groups', GroupAppViewSet, base_name=GroupApp)
+router.register(r'routes', RouteAppViewSet, base_name=RouteApp)
 
 urlpatterns = [
     path('', include(router.urls)),

@@ -8,8 +8,13 @@ from routes_app.api.serializer import RouteAppSerializer
 
 
 class RouteAppViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows routers to be viewed or edited.
-    """
-    queryset = RouteApp.objects.all().order_by('id')
+
     serializer_class = RouteAppSerializer
+
+    def get_queryset(self):
+        """
+        API endpoint that allows routers to be viewed or edited.
+        """
+        queryset = RouteApp.objects.all().order_by('id')
+        queryset = queryset.filter(fl_active=True)
+        return queryset

@@ -1,10 +1,10 @@
 from rest_framework import serializers
 
-# Create your models here.
 from groups_app.api.serializer import GroupAppSerializer
 from users_app.models import UserApp
 
 
+# Create your models here.
 class UserAppSerializer(serializers.ModelSerializer):
     group = GroupAppSerializer(many=True, read_only=True)
 
