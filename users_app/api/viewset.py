@@ -16,8 +16,15 @@ class UserAppViewSet(viewsets.ModelViewSet):
 
         """
         API endpoint that allows users to be viewed or edited.
+        TODO request without the specified headers will throw exception. It's necessary to figure out how to get customs response with django rest.
         """
+        name = self.request.META['HTTP_USER_APP_NAME']
+        password = self.request.META['HTTP_USER_APP_PASSWORD']
+
         queryset = UserApp.objects.all().order_by('id')
-        queryset = queryset.filter(fl_active=True)
+        queryset = queryset.filter(fl_active=True, login=name, password=password)
 
         return queryset
+
+
+
