@@ -10,4 +10,4 @@ class UserAppSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = UserApp
-        fields = ('name', 'last_name', 'login', 'fl_active', 'group')
+        fields = ('name', 'last_name', 'login', 'fl_active', 'group', 'password')
