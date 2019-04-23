@@ -9,4 +9,4 @@ from routes_app.models import RouteApp
 class RouteAppSerializer(serializers.ModelSerializer):
     class Meta:
         model = RouteApp
-        fields = ('app_name', 'link', 'fl_active', 'description')
+        fields = ('app_name', 'link', 'fl_active', 'description', 'authorization')
