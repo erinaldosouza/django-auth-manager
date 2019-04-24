@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_reorder',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -49,6 +50,7 @@ PASSWORD_HASHERS = [
 ]
 
 MIDDLEWARE = [
+    'admin_reorder.middleware.ModelAdminReorder',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -57,6 +59,40 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+ADMIN_REORDER = (
+    # Keep original label and models
+    'sites',
+
+    # Rename app
+   # {'app': 'auth', 'label': 'Authorisation'},
+
+    # Reorder app models
+    #{'app': 'auth', 'models': ('auth.User', 'auth.Group')},
+
+    # Exclude models
+    #{'app': 'auth', 'models': ('auth.User',)},
+
+    # models with custom name
+    {'app': 'auth', 'label': 'Site Administration Access', 'models': (
+        {'model': 'auth.User', 'label': 'Users'},
+        {'model': 'auth.Group', 'label': 'Groups'},
+    )},
+
+    # models with custom name
+    {'app': 'users_app', 'label': 'APPLICATIONS\' ACCESS MANAGEMENT', 'models': (
+        {'model': 'users_app.UserApp', 'label': 'Users'},
+        {'model': 'routes_app.RouteApp', 'label': 'Routes'},
+        {'model': 'groups_app.GroupApp', 'label': 'Groups'},
+    )},
+
+    # Cross-linked models
+   # {'app': 'users_app', 'label': 'APPLICATIONS\' ACCESS MANAGEMENT',
+   # 'models': ('users_app.UserApp','groups_app.GroupApp', 'routes_app.RouteApp')
+   # }
+)
+
+ADMIN_SITE_HEADER = "TCC ACCESS MANAGEMENT APPLICATION"
 
 ROOT_URLCONF = 'config.urls'
 
