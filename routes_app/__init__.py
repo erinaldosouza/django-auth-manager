@@ -1,0 +1,1 @@
+default_app_config = 'routes_app.apps.RoutesAppConfig'
