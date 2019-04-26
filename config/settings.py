@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'routes_app',
     'rest_framework',
     'django_filters',
+    'eureka'
 ]
 
 PASSWORD_HASHERS = [
