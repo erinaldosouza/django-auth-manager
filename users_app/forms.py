@@ -8,7 +8,7 @@ class UserForm(forms.ModelForm):
 
     class Meta:
         model = UserApp
-        fields = ('login', 'name', 'last_name', 'password')
+        fields = '__all__'
 
     def save(self, commit=True):
         # Save the provided password in hashed format
