@@ -22,11 +22,11 @@ from django.conf import settings
 
 
 router = routers.DefaultRouter()
-router.register(r'users', UserAppViewSet, base_name=UserApp)
+router.register(r'', UserAppViewSet, base_name=UserApp)
 admin.site.site_header = settings.ADMIN_SITE_HEADER
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('api/user/<str:login>/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('admin/', admin.site.urls),
 ]
