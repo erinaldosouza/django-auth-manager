@@ -12,4 +12,7 @@ class UserAppJsonRenderer(JSONRenderer, BaseRenderer):
         elif len(data) > 1:
             data = {'users': data}
 
+        else:
+            data = None
+
         return super(UserAppJsonRenderer, self).render(data, accepted_media_type, renderer_context)
