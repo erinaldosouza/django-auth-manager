@@ -7,7 +7,7 @@ from routes_app.models import RouteApp
 
 class GroupApp(models.Model):
 
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
     description = models.CharField(max_length=255)
     fl_active = models.BooleanField(default=False)
 
