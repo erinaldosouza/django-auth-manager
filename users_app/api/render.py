@@ -6,8 +6,6 @@ class UserAppJsonRenderer(JSONRenderer, BaseRenderer):
 
     def render(self, data, accepted_media_type=None, renderer_context=None):
 
-        print(renderer_context['response'].status_code)
-
         if len(data) == 1:
             data = data[0:1][0]
             data = {'user': data}
