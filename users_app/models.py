@@ -10,8 +10,8 @@ class UserApp(models.Model):
     name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
 
-    login = models.CharField(max_length=20)
-    password = models.CharField(max_length=30)
+    login = models.CharField(max_length=20, unique=True)
+    password = models.CharField(max_length=1000)
 
     fl_active = models.BooleanField(default=False)
 
